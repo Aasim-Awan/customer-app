@@ -113,76 +113,73 @@ class _ShippingInformationScreenState extends State<ShippingInformationScreen> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Container(
-                    height: 32.h,
-                    width: 161.w,
-                    decoration: BoxDecoration(
-                        color: AppColor.selectDeliveyColor,
-                        borderRadius: BorderRadius.circular(20.r)),
+                  // Container(
+                  //   height: 32.h,
+                  //   width: 161.w,
+                  //   decoration: BoxDecoration(
+                  //       color: AppColor.selectDeliveyColor,
+                  //       borderRadius: BorderRadius.circular(20.r)),
           
-                    child: Center(
-                      child: Row(
-                        children: [
-                          GestureDetector(
-                            onTap: () {
-                              setState(() {
-                                isDelivery = true;
-                              });
-                            },
-                            child: Container(
-                              height: 32.h,
-                              width: 83.w,
-                              decoration: BoxDecoration(
-                                  color: isDelivery
-                                      ? AppColor.deliveryColor
-                                      : AppColor.selectDeliveyColor,
-                                  borderRadius: BorderRadius.circular(20.r)),
-                              child: Center(
-                                child: TextWidget(
-                                  text: 'Delivery'.tr,
-                                  color: isDelivery
-                                      ? AppColor.whiteColor
-                                      : AppColor.deliveryColor,
-                                  fontSize: 14.sp,
-                                  fontWeight: FontWeight.w600,
-                                ),
-                              ),
-                            ),
-                          ),
-                          GestureDetector(
-                            onTap: () {          
-                              setState(() {
-                                isDelivery = false;
-                              });
-                            },
-                            child: Container(
-                              height: 32.h,
-                              width: 78.w,
-                              decoration: BoxDecoration(
-                                  color: isDelivery
-                                      ? AppColor.selectDeliveyColor
-                                      : AppColor.deliveryColor,
-                                  borderRadius: BorderRadius.circular(20.r)),
-                              child: Center(
-                                child: TextWidget(
-                                  text: 'Pick Up'.tr,
-                                  color: isDelivery
-                                      ? AppColor.deliveryColor
-                                      : AppColor.whiteColor,
-                                  fontSize: 14.sp,
-                                  fontWeight: FontWeight.w600,
-                                ),
-                              ),
-                            ),
-                          )
-                        ],
-                      ),
-                    ),
-                  ),
-          
-                  SizedBox(
-                    height: 30.h,
-                  ),
+                  //   child: Center(
+                  //     child: Row(
+                  //       children: [
+                  //         GestureDetector(
+                  //           onTap: () {
+                  //             setState(() {
+                  //               isDelivery = true;
+                  //             });
+                  //           },
+                  //           child: Container(
+                  //             height: 32.h,
+                  //             width: 83.w,
+                  //             decoration: BoxDecoration(
+                  //                 color: isDelivery
+                  //                     ? AppColor.deliveryColor
+                  //                     : AppColor.selectDeliveyColor,
+                  //                 borderRadius: BorderRadius.circular(20.r)),
+                  //             child: Center(
+                  //               child: TextWidget(
+                  //                 text: 'Delivery'.tr,
+                  //                 color: isDelivery
+                  //                     ? AppColor.whiteColor
+                  //                     : AppColor.deliveryColor,
+                  //                 fontSize: 14.sp,
+                  //                 fontWeight: FontWeight.w600,
+                  //               ),
+                  //             ),
+                  //           ),
+                  //         ),
+                  //         GestureDetector(
+                  //           onTap: () {          
+                  //             setState(() {
+                  //               isDelivery = false;
+                  //             });
+                  //           },
+                  //           child: Container(
+                  //             height: 32.h,
+                  //             width: 78.w,
+                  //             decoration: BoxDecoration(
+                  //                 color: isDelivery
+                  //                     ? AppColor.selectDeliveyColor
+                  //                     : AppColor.deliveryColor,
+                  //                 borderRadius: BorderRadius.circular(20.r)),
+                  //             child: Center(
+                  //               child: TextWidget(
+                  //                 text: 'Pick Up'.tr,
+                  //                 color: isDelivery
+                  //                     ? AppColor.deliveryColor
+                  //                     : AppColor.whiteColor,
+                  //                 fontSize: 14.sp,
+                  //                 fontWeight: FontWeight.w600,
+                  //               ),
+                  //             ),
+                  //           ),
+                  //         )
+                  //       ],
+                  //     ),
+                  //   ),
+                  // ),
+
                   isDelivery == false
                       ? Obx(
                           () => showAddressController.outlestModel.value.data ==

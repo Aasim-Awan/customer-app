@@ -12,6 +12,7 @@ import 'package:shopperz/app/modules/profile/controller/profile_controller.dart'
 import 'package:shopperz/app/modules/shipping/controller/show_address_controller.dart';
 import 'package:shopperz/widgets/appbar3.dart';
 import 'package:shopperz/widgets/custom_snackbar.dart';
+import 'package:shopperz/widgets/custom_text.dart';
 import 'package:shopperz/widgets/devider.dart';
 import 'package:shopperz/widgets/loader/loader.dart';
 import 'package:shopperz/widgets/textwidget.dart';
@@ -39,7 +40,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
     final showAddressController = Get.find<ShowAddressController>();
     final authController = Get.put(AuthController());
     final profileController = Get.put(ProfileController());
-
+    final String clientname="Endri Qoku. Albania";
   @override
   void initState() {
     super.initState();
@@ -128,9 +129,67 @@ class _PaymentScreenState extends State<PaymentScreen> {
                       ),
                     ),
                     SizedBox(
+                      height: 16.h,
+                    ),
+                    InkWell(
+                      onTap: (){
+                        showDialog(
+                          context: context,
+                          builder: (BuildContext context){
+                            return AlertDialog(
+                              backgroundColor: AppColor.blackColor,
+                              title: CustomText(text: "Payment ID\n"+clientname,weight: FontWeight.w500,color: AppColor.whiteColor,),
+                              content: CustomText(text: "Please note that orders paid via Western union / Moneygram / Ria will be processed upon payment confirmation.",
+                              color: AppColor.whiteColor),
+                              actions: [
+                                TextButton(onPressed: (){
+                                  Navigator.of(context).pop();
+                                },
+                                 child: CustomText(text: "okay",
+                                 size: 17,
+                                 color: AppColor.blueColor1,))
+                              ],
+                            );
+                          }                        
+                        );
+                      },
+                      child: Container(
+                          padding: EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
+                          decoration: BoxDecoration(
+                            color: AppColor.primaryBackgroundColor,
+                            border: Border.all(
+                              width: 1,
+                              color: AppColor.textColor
+                            ),
+                          ),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Expanded(
+                                child: Text(
+                                  'Western Union / Moneygram / Ria',
+                                  style: TextStyle(
+                                    color: AppColor.textColor, 
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ),
+                              Image.asset(
+                                'assets/images/westren.png', 
+                                width: 100,
+                                height: 50, 
+                                fit: BoxFit.contain,
+                              ),
+                            ],
+                          ),),
+                    ),
+                    SizedBox(
                       height: 24.h,
                     ),
-                    const DeviderWidget(),
+                    Image.asset("assets/images/cardpicture.png"),
+                    SizedBox(
+                      height: 24.h,
+                    ),
                     SizedBox(
                       height: 24.h,
                     ),

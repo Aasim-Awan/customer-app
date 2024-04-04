@@ -40,10 +40,7 @@ class LoaderCircle extends StatelessWidget {
                   borderRadius: BorderRadius.circular(50),
                   child: Padding(
                     padding: EdgeInsets.all(5.r),
-                    child: SvgPicture.asset(
-                      SvgIcon.logo,
-                      height: 60.h,
-                      width: 80.w,
+                    child: Image.asset("assets/images/LUSSOROMAN_logo.png",
                       fit: BoxFit.contain,
                     ),
                   ),

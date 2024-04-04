@@ -20,9 +20,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       toolbarHeight: 48.h,
       leading: Padding(
         padding: EdgeInsets.only(left: 16.w),
-        child: Image.asset(
-          AppImages.logo,
-        ),
+        child: Image.asset("assets/images/LUSSOROMAN_logo.png"),
       ),
       actions: [
         Padding(

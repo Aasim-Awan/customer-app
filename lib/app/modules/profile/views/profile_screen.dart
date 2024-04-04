@@ -88,11 +88,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 leadingWidth: 130.w,
                 leading: Padding(
                   padding: EdgeInsets.only(left: 16.w, right: 16.w),
-                  child: SvgPicture.asset(
-                    SvgIcon.logo,
-                    height: 20.h,
-                    width: 73.w,
-                  ),
+                  child: Image.asset("assets/images/LUSSOROMAN_logo.png"),
                 ),
               ),
               body: SingleChildScrollView(
